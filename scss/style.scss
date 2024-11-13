@@ -36,6 +36,25 @@ a {
     padding: 0 20px;
 }
 
+.button {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(12px, 1.5vw, 16px);
+    border: none;
+    border: 2px solid #190F0F;
+    text-transform: uppercase;
+    background-color: #190F0F;
+    padding: clamp(5px, 1vw, 8px) clamp(15px, 2vw, 20px);
+    margin-left: auto;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        background-color: var(--accent-color);
+        color: #fff;
+    }
+}
+
 body {
     font-family: var(--font-family);
     color: #fff;
@@ -267,10 +286,10 @@ body {
 .delish {
     text-align: center;
     padding: clamp(20px, 5vw, 60px) 0;
+    margin-bottom: clamp(60px, 10vw, 95px);
 
     &__slider {
         margin-top: clamp(20px, 4vw, 40px);
-        // position: relative;
     }
 
     &__container {
@@ -369,3 +388,201 @@ body {
 }
 
 /*-------------------/Delish---------------*/
+
+/*-------------------Coffee---------------*/
+.coffee {
+    padding: clamp(20px, 5vw, 60px) 0;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 clamp(10px, 5vw, 20px);
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        margin-bottom: clamp(20px, 5vw, 40px);
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) and (max-width: 1366px) {
+            justify-content: center;
+            gap: 20px;
+        }
+
+        &-image {
+            width: clamp(121px, 53vw, 512px);
+            margin-right: clamp(20px, 5vw, 40px);
+            flex-shrink: 0;
+            position: relative;
+            top: clamp(-42px, -5vw, -42px);
+
+            @media (max-width: 767px) {
+                margin-right: 0;
+                top: -92px;
+                margin-bottom: 20px;
+            }
+
+            @media (min-width: 768px) and (max-width: 1366px) {
+                width: 40%;
+                top: -91px;
+            }
+        }
+
+        &-content {
+            max-width: 600px;
+
+            @media (max-width: 767px) {
+                max-width: 100%;
+            }
+
+
+
+            &-description {
+                position: relative;
+                max-width: clamp(312px, 85vw, 645px);
+                top: clamp(-13vh, -10vw, -15vh);
+                left: clamp(-15px, -4vw, -30px);
+                font-weight: 700;
+                font-size: clamp(14px, 2vw, 32px);
+                margin-bottom: clamp(-22px, -3vw, -14px);
+
+                @media (max-width: 767px) {
+                    max-width: 100%;
+                    top: -55px;
+                    left: 0;
+                }
+
+                @media (min-width: 768px) and (max-width: 1366px) {
+                    top: -74px;
+                }
+            }
+
+            &-address {
+                max-width: clamp(300px, 50vw, 500px);
+                font-family: var(--font-family);
+                font-size: clamp(20px, 3vw, 30px);
+                margin-bottom: clamp(15px, 3vw, 30px);
+                margin-left: 55px;
+                color: #eee;
+                padding-bottom: clamp(20px, 5vw, 50px);
+
+                @media (max-width: 767px) {
+                    max-width: 100%;
+                    margin-left: 0;
+                    text-align: center;
+                }
+
+                @media (min-width: 768px) and (max-width: 1366px) {
+                    max-width: 80%;
+
+                }
+            }
+
+            &-button {
+                width: clamp(200px, 30vw, 267px);
+                height: clamp(60px, 10vw, 82px);
+                padding: clamp(5px, 1vw, 8px) clamp(15px, 2vw, 20px);
+                font-size: clamp(20px, 3vw, 32px);
+                background-color: rgba(239, 218, 189, 0.73);
+                border: none;
+                border-radius: 50px;
+                color: #3b2b24;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                margin-left: 15vh;
+
+                @media (max-width: 767px) {
+                    margin: 0 auto;
+                }
+
+                @media (min-width: 768px) and (max-width: 1366px) {
+                    margin: 20px auto;
+                }
+            }
+
+            &-button:hover {
+                background-color: #c39e75;
+            }
+        }
+    }
+
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(20px, 3vw, 40px);
+        text-align: center;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 767px) {
+            align-items: center;
+        }
+
+        @media (min-width: 768px) and (max-width: 1366px) {
+            gap: 20px;
+        }
+
+        & .coffee__info {
+            flex: 1;
+            padding: clamp(10px, 2vw, 20px);
+            position: relative;
+
+            @media (min-width: 768px) and (max-width: 1366px) {
+                padding: 0;
+            }
+
+            &:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: clamp(46vh, 8vw, 43vh);
+                width: 3px;
+                height: clamp(150px, 30vw, 334px);
+                background-color: #d9d9d9;
+
+                @media (max-width: 767px) {
+                    display: none;
+                }
+
+                @media (min-width: 768px) and (max-width: 1366px) {
+                    left: calc(100% - -7px);
+                    height: 200px;
+                    padding: 0;
+                }
+
+            }
+
+
+            &-title {
+                font-size: clamp(18px, 2.5vw, 32px);
+                font-weight: 300;
+                margin-bottom: clamp(10px, 1vw, 15px);
+                color: #c39e75;
+            }
+
+            p {
+                width: clamp(180px, 30vw, 318px);
+                height: clamp(130px, 20vw, 227px);
+                font-size: clamp(18px, 2.5vw, 32px);
+                color: #eee;
+
+
+            }
+        }
+    }
+
+}
+
+/*-------------------/Coffee---------------*/
