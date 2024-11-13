@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&family=Inconsolata:wght@400;700&family=Inika:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+* img {
+    max-width: 100%;
+}
+
+:root {
+    --accent-color: #8C674A;
+    --text-color: #d6d6d6;
+
+}
+
+:root {
+    --font-family: "Inria Sans", sans-serif;
+    --second-family: "Inconsolata", sans-serif;
+}
+
+[class*="__container"] {
+    max-width: 1295px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+body {
+    font-family: var(--font-family);
+    color: #fff;
+    background:
+        linear-gradient(180deg, #8c674a 0%, #6c351a 32.5%, #938686 99%),
+        linear-gradient(31deg, rgba(94, 74, 46, 0.2) 6.5%, rgba(94, 74, 46, 0.2) 46.24%, rgba(144, 77, 39, 0.2) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    // overflow-x: hidden;
+}
+
+/*-------------------Header---------------*/
+
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: clamp(10px, 2vw, 20px) 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 12;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: clamp(1.25rem, -2.799rem + 8.44vw, 4.688rem);
+    }
+
+    &__menu {
+        display: flex;
+
+
+    }
+
+    &__logo {
+        margin-left: clamp(10vw, 10vh, 30vh);
+
+        @media (max-width: 767px) {
+            margin-left: clamp(2vw, 1vh, 30vh);
+        }
+
+        img {
+            max-width: clamp(100px, 15vw, 150px);
+        }
+    }
+
+    .order {
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: clamp(12px, 1.5vw, 16px);
+        border: 2px solid #190F0F;
+        text-transform: uppercase;
+        background-color: #190F0F;
+        padding: clamp(5px, 1vw, 8px) clamp(15px, 2vw, 20px);
+        margin-left: auto;
+        border-radius: 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        @media (max-width: 767px) {
+            font-size: clamp(10px, 1vw, 14px);
+            padding: 6px 12px;
+            margin-left: 10px;
+        }
+
+    }
+}
+
+.menu {
+    @media (max-width: 767px) {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 80%;
+        display: flex;
+        overflow: auto;
+        padding: 20px 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: left 0.3s ease;
+
+        &._active {
+            left: 0;
+
+        }
+    }
+}
+
+.menu-icon {
+    display: none;
+
+    @media (max-width: 767px) {
+        display: block;
+        height: 18px;
+        width: 30px;
+        position: relative;
+        cursor: pointer;
+        z-index: 5;
+
+        span {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: all 0.3s ease;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &:nth-child(3) {
+                bottom: 0;
+            }
+        }
+
+        &._active span {
+            background-color: #fff;
+            transform: scale(0);
+
+            &:nth-child(1) {
+                transform: rotate(45deg);
+                top: 50%;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+                top: 50%;
+            }
+        }
+    }
+}
+
+.menu__body {
+    @media (max-width: 767px) {
+        flex-direction: column;
+        margin: auto;
+        gap: 40px;
+    }
+
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2vw, 30px);
+    margin-right: auto;
+
+    .menu__link {
+        @media (max-width: 767px) {
+            font-size: clamp(25px, 1.5vw, 30px);
+        }
+
+        font-weight: 700;
+        font-size: clamp(14px, 1.5vw, 20px);
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--accent-color);
+            }
+        }
+
+    }
+}
+
+/*-------------------/Header---------------*/
+
+
+/*-------------------Hero---------------*/
+
+
+.hero {
+    padding-bottom: clamp(40px, 5vw, 60px);
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding-left: clamp(20px, 3vw, 40px);
+    background: url('../img/header-bg.png') no-repeat center center / cover; // Путь к фоновому изображению
+
+    &__container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__content {
+        position: relative;
+        bottom: -67vh;
+        left: clamp(-24px, -16vw, 40px);
+        z-index: 1;
+        padding: clamp(20px, 3vw, 40px);
+        max-width: clamp(250px, 50%, 400px);
+        margin-bottom: clamp(20px, 3vw, 40px);
+    }
+
+    &__quote {
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: clamp(30px, 4vw, 40px);
+        color: #fff;
+        width: clamp(300px, 30vw, 367px);
+        height: clamp(300px, 30vw, 367px);
+
+        @media (max-width: 767px) {
+            width: clamp(180px, 30vw, 367px);
+        }
+    }
+}
+
+/*-------------------/Hero---------------*/
+/*-------------------Delish---------------*/
+
+.delish {
+    text-align: center;
+    padding: clamp(20px, 5vw, 60px) 0;
+
+    &__slider {
+        margin-top: clamp(20px, 4vw, 40px);
+        // position: relative;
+    }
+
+    &__container {
+        max-width: 1290px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    &__title {
+        font-family: Impact, sans-serif;
+        font-size: clamp(24px, 4vw, 64px);
+        font-weight: 400;
+        margin-bottom: clamp(10px, 2vw, 20px);
+    }
+
+    &__subtitle {
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: clamp(14px, 2vw, 40px);
+        margin-bottom: clamp(15px, 3vw, 30px);
+    }
+
+    &__link {
+        display: inline-block;
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: clamp(12px, 2vw, 24px);
+        text-transform: uppercase;
+        margin-bottom: clamp(15px, 3vw, 80px);
+        transition: transform 0.3s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+}
+
+.delish-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+
+
+    @media (max-width: 660px) {
+        text-align: center;
+    }
+
+}
+
+.swiper-pagination {
+    display: flex;
+    position: absolute;
+    right: auto;
+    left: clamp(60vh, 100vh, 100vh);
+    margin-top: clamp(10px, 2vw, 20px);
+    z-index: 10;
+    justify-content: space-around;
+    margin: 0 auto;
+    gap: 17px;
+
+}
+
+.swiper-pagination-bullet {
+    display: flex;
+    width: 12px;
+    height: 12px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: opacity 0.3s ease;
+    margin-top: clamp(-50px, -30px, -10px);
+
+    @media (max-width: 995px) {
+        display: none;
+    }
+
+    @media (max-width: 1366px) {
+        display: none;
+    }
+
+    &-active {
+        opacity: 1;
+        background-color: var(--accent-color);
+    }
+}
+
+.swiper {
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: inline-flex;
+}
+
+/*-------------------/Delish---------------*/
