@@ -1,17 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     const menuIcon = document.querySelector(".menu-icon");
     const menu = document.querySelector(".menu");
+    const menuLinks = document.querySelectorAll(".menu__link");
 
     if (menuIcon && menu) {
-        // Проверяем клик по иконке меню
         menuIcon.addEventListener("click", () => {
-            console.log("Бургер меню кликнуто"); // Сообщение для проверки клика
             menu.classList.toggle("_active");
             menuIcon.classList.toggle("_active");
-            console.log("Классы _active добавлены/удалены");
         });
-    } else {
-        console.error("Элемент .menu-icon или .menu не найден!");
+        menuLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("_active");
+                menuIcon.classList.remove("_active");
+            });
+        });
     }
 });
 
