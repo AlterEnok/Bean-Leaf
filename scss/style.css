@@ -539,7 +539,7 @@ html {
 }
 @media (min-width: 768px) and (max-width: 1366px) {
   .coffee__bottom .coffee__info:not(:last-child)::after {
-    left: calc(100% + 7px);
+    left: calc(100% + 17px);
     height: 200px;
     padding: 0;
   }
