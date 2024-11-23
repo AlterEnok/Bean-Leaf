@@ -74,11 +74,7 @@ html {
 /*-------------------Header---------------*/
 
 .header {
-
     position: fixed;
-
-
-
     top: 0;
     width: 100%;
     padding: clamp(10px, 2vw, 20px) 0;
@@ -417,11 +413,7 @@ html {
 
     &-active {
         opacity: 1;
-
         background-color: #683f1f;
-
-        background-color: var(--accent-color);
-
     }
 }
 

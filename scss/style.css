@@ -358,7 +358,6 @@ html {
 .swiper-pagination-bullet-active {
   opacity: 1;
   background-color: #683f1f;
-  background-color: var(--accent-color);
 }
 
 .swiper {
