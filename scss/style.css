@@ -69,7 +69,6 @@ html {
 /*-------------------Header---------------*/
 .header {
   position: fixed;
-  position: absolute;
   top: 0;
   width: 100%;
   padding: clamp(10px, 2vw, 20px) 0;
