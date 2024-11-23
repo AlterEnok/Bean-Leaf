@@ -69,6 +69,7 @@ html {
 /*-------------------Header---------------*/
 .header {
   position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   padding: clamp(10px, 2vw, 20px) 0;
@@ -358,6 +359,7 @@ html {
 .swiper-pagination-bullet-active {
   opacity: 1;
   background-color: #683f1f;
+  background-color: var(--accent-color);
 }
 
 .swiper {
@@ -599,6 +601,7 @@ html {
 .application__image {
   opacity: 0.6;
   min-width: 99vw;
+  max-width: 90vw;
 }
 @media (max-width: 1366px) {
   .application__image {

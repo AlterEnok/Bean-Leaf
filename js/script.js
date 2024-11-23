@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
 const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
@@ -26,6 +27,8 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 });
+
+
 
 
 /*---------Slider*/
